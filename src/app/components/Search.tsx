@@ -14,7 +14,7 @@ export default function Search() {
   const [pinned, setPinned] = useState(false);
   const [query, setQuery] = useState("");
 
-  // This is the *visible, animated search bar*, NOT its 200px hover hitbox.
+  // This is the *visible, animated search bar*, NOT its 12.5rem hover hitbox.
   const barRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -67,11 +67,11 @@ export default function Search() {
   }, []);
 
   return (
-    <div className="headerSearch relative z-50 h-[50px] w-[40px] shrink-0">
+    <div className="headerSearch relative z-50 h-[3.125rem] w-[2.5rem] shrink-0">
       {/* Stationary hover region: not used to decide inside/outside clicks. */}
       <div
         onPointerLeave={() => { console.log("[search trigger] hover-area LEAVE"); setHovered(false); }}
-        className={`absolute right-0 top-0 h-[50px] w-[200px] ${
+        className={`absolute right-0 top-0 h-[3.125rem] w-[12.5rem] ${
           expanded ? "pointer-events-auto" : "pointer-events-none"
         }`}
       >

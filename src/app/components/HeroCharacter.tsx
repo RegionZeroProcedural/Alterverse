@@ -69,9 +69,9 @@ export default function HeroCharacter() {
   }, [reducedMotion]);
 
   // Entrance transformation
-  const entranceOffsetX = (1 - entranceProgress) * 40;
-  const entranceOffsetY = (1 - entranceProgress) * 16;
-  const entranceScale = 1.035 - entranceProgress * 0.035;
+  const entranceOffsetX = (1 - entranceProgress) * 40 + 50;
+  const entranceOffsetY = (1 - entranceProgress) * 16 + 50;
+  const entranceScale = 0.975 - entranceProgress * 0.035;
 
   return (
     <div
@@ -81,8 +81,8 @@ export default function HeroCharacter() {
 
         transform: `
           translate3d(
-            ${entranceOffsetX}px,
-            ${entranceOffsetY}px,
+            ${entranceOffsetX / 16}rem,
+            ${entranceOffsetY / 16}rem,
             0
           )
           scale(${entranceScale})
@@ -96,8 +96,8 @@ export default function HeroCharacter() {
         style={{
           transform: `
             translate3d(
-              ${driftX}px,
-              ${driftY}px,
+              ${driftX / 16}rem,
+              ${driftY / 16}rem,
               0
             )
             scale(${1 + driftScale})
@@ -110,7 +110,7 @@ export default function HeroCharacter() {
           src={Vesper}
           alt="Vesper"
           loading="eager"
-          sizes="(max-width: 1024px) 100vw, 70vw"
+          sizes="(max-width: 64rem) 100vw, 70vw"
           className="block h-auto max-w-full"
         />
       </div>

@@ -128,8 +128,8 @@ export default function HeroActionCard({
             style={{
                 transform: `
                     translate3d(
-                        ${driftX}px,
-                        ${driftY}px,
+                        ${driftX / 16}rem,
+                        ${driftY / 16}rem,
                         0
                     )
                 `
@@ -139,21 +139,18 @@ export default function HeroActionCard({
             {icon === 1
                 ? (
                     <HiSquare3Stack3D
-                        className="z-10 text-[var(--accent)] min-w-12 min-h-12"
-                        size={48}
+                        className="z-10 text-[var(--accent)] w-12 h-12 min-w-12 min-h-12"
                     />
                 )
                 : icon === 2
                     ? (
                         <TbGavel
-                            className="z-10 text-[var(--accent)] min-w-12 min-h-12"
-                            size={48}
+                            className="z-10 text-[var(--accent)] w-12 h-12 min-w-12 min-h-12"
                         />
                     )
                     : (
                         <BiSignal4
-                            className="z-10 text-[var(--accent)] min-w-12 min-h-12"
-                            size={48}
+                            className="z-10 text-[var(--accent)] w-12 h-12 min-w-12 min-h-12"
                         />
                     )
             }

@@ -26,9 +26,9 @@ onClick={
             h-13
             relative
             rounded-xl
-            text-shadow-[0_0_18px_var(--primaryBtnGlow)]
-            shadow-[0_0_20px_var(--primaryBtnGlow)]
-            border-2
+            text-shadow-[0_0_1.125rem_var(--primaryBtnGlow)]
+            shadow-[0_0_1.25rem_var(--primaryBtnGlow)]
+            border-[0.125rem]
             border-[var(--primaryBtnBorder)]
             bg-transparent
             text-gray-100
