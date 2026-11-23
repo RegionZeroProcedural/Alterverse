@@ -45,8 +45,8 @@ export default function SearchBar({
           onEscape();
         }
       }}
-      className="pointer-events-auto absolute right-0 top-1/2 -translate-y-1/2 overflow-hidden rounded-full border border-white/20 bg-[#090a13]/90 shadow-[0_0_18px_#ae5efa33] backdrop-blur-md"
-      style={{ width: `${width}px`, height: `${height}px` }}
+      className="pointer-events-auto absolute right-0 top-1/2 -translate-y-1/2 overflow-hidden rounded-full border-[0.0625rem] border-white/20 bg-[#090a13]/90 shadow-[0_0_1.125rem_#ae5efa33] backdrop-blur-md"
+      style={{ width: `${width / 16}rem`, height: `${height / 16}rem` }}
     >
       <input
         ref={inputRef}
@@ -57,7 +57,7 @@ export default function SearchBar({
         onChange={(event) => onChange(event.target.value)}
         onFocus={onInputFocus}
         tabIndex={expanded ? 0 : -1}
-        className="absolute inset-y-0 left-0 w-[calc(100%-40px)] bg-transparent pl-4 text-sm text-white outline-none placeholder:text-gray-400"
+        className="absolute inset-y-0 left-0 w-[calc(100%-2.5rem)] bg-transparent pl-4 text-sm text-white outline-none placeholder:text-gray-400"
         style={{
           opacity: inputOpacity,
           pointerEvents: expanded ? "auto" : "none",
@@ -71,9 +71,9 @@ export default function SearchBar({
         onPointerEnter={onIconEnter}
         onMouseDown={(event) => event.preventDefault()}
         onClick={onIconClick}
-        className="absolute inset-y-0 right-0 flex w-[40px] cursor-pointer items-center justify-center text-gray-200 hover:text-white"
+        className="absolute inset-y-0 right-0 flex w-[2.5rem] cursor-pointer items-center justify-center text-gray-200 hover:text-white"
       >
-        <IoSearch size={24} aria-hidden="true" />
+        <IoSearch className="w-6 h-6" aria-hidden="true" />
       </button>
     </div>
   );

@@ -26,8 +26,8 @@ export default function SignUpButton({setAuthModalActive, authModalActive, mode 
             relative
             rounded-xl
             bg-[image:var(--signUpBtnBg)]
-            shadow-[0_0_20px_var(--primaryBtnGlow)]
-            border-2
+            shadow-[0_0_1.25rem_var(--primaryBtnGlow)]
+            border-[0.125rem]
             border-[var(--primaryBtnBorder)]
             alterverseFont
             font-medium

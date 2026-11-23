@@ -55,7 +55,7 @@ export default function AuthModal({authModalActive, setAuthModalActive}: authPro
                     className="w-8 h-8"
                 />
             </button>
-                <div className="shadow-[0_0_35px_#7828c255] z-101 flex place-items-center w-80 h-130 bg-[image:var(--primaryBtnBg)] opacity-60 blur-sm rounded-2xl border-6 border-[var(--primaryBtnHighlight)]">
+                <div className="shadow-[0_0_2.1875rem_#7828c255] z-101 flex place-items-center w-80 h-130 bg-[image:var(--primaryBtnBg)] opacity-60 blur-sm rounded-2xl border-[0.375rem] border-[var(--primaryBtnHighlight)]">
                 </div>
                 <div className="absolute z-102 w-70 h-100 bg-[#5900ff] opacity-20 blur-3xl rounded-2xl">
                 
@@ -68,9 +68,9 @@ export default function AuthModal({authModalActive, setAuthModalActive}: authPro
                 </div>
                 <div className="authContent z-200 gap-7 flex flex-col absolute w-70 h-120">
                     <HiCubeTransparent className="text-[var(--accent2)] self-center w-40 h-40 mt-7"/>
-                    <div className="text-[var(--primaryBtnBorder)] blur-[0.6px] text-[1.4rem] scale-y-125 w-80 font-bold">WELCOME TO ALTERVERSE</div>
+                    <div className="text-[var(--primaryBtnBorder)] blur-[0.0375rem] text-[1.4rem] scale-y-125 w-80 font-bold">WELCOME TO ALTERVERSE</div>
                     <input className="bg-[#090a13]/40
-                                border border-[#ca7afb]/40
+                                border-[0.0625rem] border-[#ca7afb]/40
                                 rounded-md
                                 h-8
                                 px-3
@@ -79,7 +79,7 @@ export default function AuthModal({authModalActive, setAuthModalActive}: authPro
                                 focus:border-[var(--primaryBtnHighlight)]
                                 focus:outline-none" type="text" placeholder="Username/E-mail"/>
                     <input className="bg-[#090a13]/40
-                                border border-[#ca7afb]/40
+                                border-[0.0625rem] border-[#ca7afb]/40
                                 rounded-md
                                 h-8
                                 px-3

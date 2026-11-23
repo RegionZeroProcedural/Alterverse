@@ -50,17 +50,17 @@
 }
 
 .blur-bg {
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(0.5rem);
 }
 
 .heroPrimaryBtn {
   background: var(--primaryBtnBg);
-  border: 2px solid var(--primaryBtnBorder);
+  border: 0.125rem solid var(--primaryBtnBorder);
 }
 
 .heroSecondaryBtn {
   background: transparent;
-  border: 2px solid var(--primaryBtnBorder);
+  border: 0.125rem solid var(--primaryBtnBorder);
 }
 
 .hero {
@@ -152,7 +152,23 @@ body {
   background-color: var(--background);
 }
 
-/* Size components at normal zoom and let content determine page height. */
+/* Match the authored 80% desktop scale at normal browser zoom.
+   Viewport units stay fluid; rem values follow the corrected desktop base. */
+@media (width > 64rem) {
+  html {
+    font-size: 80%;
+  }
+}
+
+/* Blur utilities use the same units as the rest of the interface. */
+@theme {
+  --blur-sm: 0.5rem;
+  --blur-md: 0.75rem;
+  --blur-lg: 1rem;
+  --blur-xl: 1.5rem;
+  --blur-2xl: 2.5rem;
+  --blur-3xl: 4rem;
+}
 .siteHeader {
   position: relative;
   z-index: 50;
@@ -328,7 +344,7 @@ body {
   margin-top: 0;
 }
 .heroFeatures .actionCards + .actionCards {
-  border-left: 1px solid #8274e0;
+  border-left: 0.0625rem solid #8274e0;
   padding-left: clamp(1rem, 2vw, 2.5rem);
 }
 .heroFeatures .actionCards > div:first-of-type {
@@ -389,7 +405,7 @@ body {
   place-items: center;
   width: min(20rem, 100%);
   height: 32.5rem;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(0.1875rem);
 }
 
 .authPanel > div {
@@ -421,7 +437,7 @@ body {
   flex: 1;
 }
 
-@media (width <= 80rem) {
+@media (width <= 64rem) {
   .siteHeader {
     grid-template-columns: minmax(0, 1fr) auto auto;
     gap: 0 1.5rem;
@@ -587,7 +603,7 @@ body {
     row-gap: 0.5rem;
     padding: 1.5rem 0 0;
     border-left: 0;
-    border-top: 1px solid #8274e066;
+    border-top: 0.0625rem solid #8274e066;
   }
 
   .heroFeatures .actionCards > svg {

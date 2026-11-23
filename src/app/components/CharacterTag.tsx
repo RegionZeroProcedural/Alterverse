@@ -20,9 +20,9 @@ export default function CharacterTag({character}: {character: characterProps}) {
       });
 
     return (
-        <div style={{opacity: entranceProgress, transform: `translateX(${(1-entranceProgress)*16}px)`}} className="characterTag motion-reduce:!opacity-100 motion-reduce:!transform-none">
+        <div style={{opacity: entranceProgress, transform: `translateX(${1-entranceProgress}rem)`}} className="characterTag motion-reduce:!opacity-100 motion-reduce:!transform-none">
             <div className="flex flex-row w-68 h-16 bg-[#020202dd] rounded-r-lg overflow-visible">
-                <div className="w-1 bg-[var(--primaryBtnHighlight)] blur-[1.3px] h-full shadow-[0_0_15px_var(--accent)]" />
+                <div className="w-1 bg-[var(--primaryBtnHighlight)] blur-[0.08125rem] h-full shadow-[0_0_0.9375rem_var(--accent)]" />
                 <div className="flex flex-col text-gray-100 z-200 ml-5 justify-center">
                     <div className="text-[1.2rem] tracking-[0.3rem]">
                         {character.name.toUpperCase()}
