@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+
+
+/***********
+* Globals *
+***********/
+
+
+:root {
+  --background: #090a13;
+  --foreground: #171717;
+  --headerHeight: 8rem;
+  --headerShadow: #0a0117;
+  --accent: #ae5efa;
+  --accent2: #8274e0;
+  --primaryBtnBorder: #ca7afb;
+  --primaryBtnHighlight: #faaafb;
+  --primaryBtnGlow: #7828c2;
+  --signInModalOpacity: 100;
+
+  --signUpBtnBg: radial-gradient(
+    circle at -10% -150%,
+    #e2b5ff 0%,
+    var(--primaryBtnHighlight) 35%,
+    var(--accent) 90%
+  );
+
+  --primaryBtnBg: radial-gradient(
+    circle at -10% -400%,
+    #e2b5ff 0%,
+    var(--primaryBtnHighlight) 35%,
+    var(--accent) 90%
+  );
+
+  --heroShadow: radial-gradient(
+  ellipse at 50% 50%,
+  #020109ef 8%,
+  #020109d3 20%,
+  #10072847 40%,
+  transparent 50%
+  );
+
+  --eyebrowGradient: linear-gradient(
+    to right,
+    var(--accent2) 20%,
+    transparent 100%
+  );
+}
+
+.blur-bg {
+  backdrop-filter: blur(8px);
+}
+
+.heroPrimaryBtn {
+  background: var(--primaryBtnBg);
+  border: 2px solid var(--primaryBtnBorder);
+}
+
+.heroSecondaryBtn {
+  background: transparent;
+  border: 2px solid var(--primaryBtnBorder);
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.background {
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
+.actionCardText {
+  font-family: var(--font-alterverse);
+}
+
+.alterverseFont {
+  font-family: var(--font-alterverse);
+}
+
+.heroTitle {
+  font-family: var(--font-alterverse);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 0.85;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+
+  /* Match the dramatic slant and proportions */
+  transform: skewX(-3deg) scaleX(0.96);
+  transform-origin: left center;
+
+  /* Match the original lettering's appearance */
+  background: linear-gradient(
+    115deg,
+    #f5f3ff 20%,
+    #800acf 85%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  scale: 0.6 1;
+}
+
+.heroSubtitle {
+  font-family: var(--font-alterverse);
+  font-weight: 400;
+  line-height: 0.85;
+  letter-spacing: 0.1em;
+
+  /* Match the original lettering's appearance */
+  background: linear-gradient(
+    115deg,
+    #f5f3ff 1%,
+    #8274e0 25%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  scale: 0.9 1;
+}
+
+.embla__viewport {
+    overflow: hidden;
+    height: 26rem;
+}
+
+.embla__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.embla__slide {
+    flex: 0 0 auto;
+}
