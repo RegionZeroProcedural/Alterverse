@@ -20,7 +20,10 @@ export default function AuthModal({authModalActive, setAuthModalActive}: authPro
     });
     
     return(
-        <>  
+        <>  <div className="grid absolute place-items-center h-screen w-screen overflow-visible select-none">
+            <div style={{
+                opacity: animatedOpacity,
+            }} className="absolute z-10 w-80 h-130 backdrop-blur-sm rounded-lg overflow-visible border-1 border-t-[#ffffff22] border-l-[#ffffff22] border-r-[#ffffff44] border-b-[#ffffff44]" />
             <div
             style={{
                 opacity: animatedOpacity*0.75,
@@ -28,7 +31,7 @@ export default function AuthModal({authModalActive, setAuthModalActive}: authPro
             }}
             aria-hidden={!authModalActive}
             inert={!authModalActive}
-            className="authLayer"
+            className="z-100 authLayer"
             >
                 <div role="dialog" aria-modal="true" aria-label="Welcome to Alterverse" className="authPanel">
                 <button
@@ -67,7 +70,7 @@ export default function AuthModal({authModalActive, setAuthModalActive}: authPro
                 
                 </div>
                 <div className="authContent z-200 gap-7 flex flex-col absolute w-70 h-120">
-                    <HiCubeTransparent className="text-[var(--accent2)] self-center w-40 h-40 mt-7"/>
+                    <HiCubeTransparent className="blur-[0.75px] text-[var(--accent2)] self-center w-40 h-40 mt-7"/>
                     <div className="text-[var(--primaryBtnBorder)] blur-[0.0375rem] text-[1.4rem] scale-y-125 w-80 font-bold">WELCOME TO ALTERVERSE</div>
                     <input className="bg-[#090a13]/40
                                 border-[0.0625rem] border-[#ca7afb]/40
@@ -93,6 +96,7 @@ export default function AuthModal({authModalActive, setAuthModalActive}: authPro
                     </div>
                 </div>
                 </div>
+            </div>
             </div>
         </>
     )
