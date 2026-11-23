@@ -109,6 +109,8 @@ export default function HeroCharacter() {
         <Image
           src={Vesper}
           alt="Vesper"
+          loading="eager"
+          sizes="(max-width: 1024px) 100vw, 70vw"
           className="block h-auto max-w-full"
         />
       </div>

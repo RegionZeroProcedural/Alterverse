@@ -4,7 +4,7 @@ import logo from "../../../public/ALTERVERSE Logo.png"
 export default function Logo() {
     return (
         <>
-            <Image src={logo} alt='Alterverse Logo' width={400} className="siteLogo mr-72 translate-y-[-1.5rem]"/>
+            <Image src={logo} alt='Alterverse Logo' width={400} className="siteLogo"/>
         </>
     )
 }
