@@ -1,7 +1,7 @@
 export default function HeroEyebrow() {
     return(
     <>
-        <div className="flex flex-row mb-5">
+        <div className="heroEyebrow flex flex-row mb-5">
             <div className="relative z-10 w-70 h-10 text-[1.5rem] text-gray-100 tracking-widest">
                 A L T E R V E R S E
             </div>

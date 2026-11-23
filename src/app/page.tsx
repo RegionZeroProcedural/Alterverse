@@ -14,9 +14,9 @@ export default function Home() {
       <AuthModal authModalActive={authModalActive} setAuthModalActive={setAuthModalActive}/>
       <Header setAuthModalActive = {setAuthModalActive} authModalActive = {authModalActive} />
       <BackgroundImg />
-      <div className="w-[100dvw] h-[100dvh] absolute overflow-hidden">
+      <main className="heroLayout w-[100dvw] h-[100dvh] absolute overflow-hidden">
         <Hero />
-      </div>        
+      </main>
     </>
   );
 }

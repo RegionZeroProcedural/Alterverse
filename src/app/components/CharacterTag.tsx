@@ -2,7 +2,6 @@ import { useAnimationController } from "@/lib/animation controller/AnimationCont
 import { GiSoundWaves } from "react-icons/gi";
 
 interface characterProps {
-    character: characterProps
     name: string
     genre: string
     born: number /* use performance.now */
@@ -11,7 +10,7 @@ interface characterProps {
     
 }
 
-export default function CharacterTag({character}: characterProps) {
+export default function CharacterTag({character}: {character: characterProps}) {
     
     const [animatedWidth = 0, animatedHeight = 0] = useAnimationController({
         type: "easeOut",
@@ -24,7 +23,7 @@ export default function CharacterTag({character}: characterProps) {
       });
 
     return (
-        <div style={{transform: `translateX(${22-animatedWidth}rem)`}} className="fixed bottom-8 right-8 z-100 overflow-visible">
+        <div style={{transform: `translateX(${22-animatedWidth}rem)`}} className="characterTag fixed bottom-8 right-8 z-100 overflow-visible">
             <div className="flex flex-row w-68 h-16 bg-[#020202dd] rounded-r-lg translate-y-[-10rem] mr-5 overflow-visible">
                 <div className="w-1 bg-[var(--primaryBtnHighlight)] blur-[1.3px] h-full shadow-[0_0_15px_var(--accent)]" />
                 <div className="flex flex-col text-gray-100 z-200 ml-5 justify-center">
