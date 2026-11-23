@@ -69,9 +69,9 @@ export default function HeroCharacter() {
   }, [reducedMotion]);
 
   // Entrance transformation
-  const entranceOffsetX = (1 - entranceProgress) * 40;
-  const entranceOffsetY = (1 - entranceProgress) * 16;
-  const entranceScale = 1.035 - entranceProgress * 0.035;
+  const entranceOffsetX = (1 - entranceProgress) * 40 + 50;
+  const entranceOffsetY = (1 - entranceProgress) * 16 + 50;
+  const entranceScale = 0.975 - entranceProgress * 0.035;
 
   return (
     <div

@@ -11,7 +11,7 @@ export default function Hero() {
 
     return (
         <>
-            <section className="heroContent" aria-label="Discover Alterverse">
+            <section className="heroContent overflow-visible" aria-label="Discover Alterverse">
                 <div className="heroCopy">
                     <HeroEyebrow />
                     <h1 className="heroTitle">

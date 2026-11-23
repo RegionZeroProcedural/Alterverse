@@ -172,13 +172,23 @@ body {
 .siteHeader {
   position: relative;
   z-index: 50;
+  isolation: isolate;
   display: grid;
   grid-template-columns: minmax(14rem, 1fr) auto auto auto;
   align-items: center;
   gap: clamp(1rem, 2vw, 2.5rem);
   min-height: var(--headerHeight);
   padding-inline: clamp(1.25rem, 2.5vw, 4rem);
-  background: linear-gradient(var(--headerShadow), #0a011700);
+}
+
+.siteHeader::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: calc(100% + clamp(3rem, 6vh, 6rem));
+  z-index: -1;
+  background: linear-gradient(var(--headerShadow), #0a0117bf 35%, transparent);
+  pointer-events: none;
 }
 
 .siteLogo {
@@ -611,5 +621,194 @@ body {
   }
   .heroFeatures .actionCards > div {
     grid-column: 2;
+  }
+}
+
+/* Let the artwork start at the top of the page behind the header. */
+@media (width > 64rem) {
+  .heroLayout {
+    margin-top: calc(-1 * var(--headerHeight));
+  }
+
+  .heroContent {
+    min-height: 100svh;
+    padding-top: calc(var(--headerHeight) + clamp(2rem, 6vh, 5rem));
+  }
+
+  .heroSelector {
+    top: calc(var(--headerHeight) + clamp(2rem, 10vh, 7rem));
+  }
+}
+
+/*********************
+* Mobile navigation *
+*********************/
+
+.mobileNavToggle {
+  display: none;
+}
+
+.mobileNavDrawer {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: min(22rem, calc(100% - 2rem));
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: max(1.5rem, env(safe-area-inset-top)) 1.5rem max(1.5rem, env(safe-area-inset-bottom));
+  overflow-y: auto;
+  border: 0;
+  border-left: 0.0625rem solid var(--accent2);
+  background: linear-gradient(160deg, #1d1030, var(--background) 55%);
+  color: #f5f3ff;
+  box-shadow: -1rem 0 4rem #02010999;
+  transform: translateX(100%);
+  transition: transform 300ms ease, display 300ms allow-discrete, overlay 300ms allow-discrete;
+}
+
+.mobileNavDrawer[open] {
+  transform: translateX(0);
+}
+
+.mobileNavDrawer::backdrop {
+  background: #020109b3;
+  backdrop-filter: blur(0.25rem);
+  opacity: 0;
+  transition: opacity 300ms ease, display 300ms allow-discrete, overlay 300ms allow-discrete;
+}
+
+.mobileNavDrawer[open]::backdrop {
+  opacity: 1;
+}
+
+@starting-style {
+  .mobileNavDrawer[open] {
+    transform: translateX(100%);
+  }
+
+  .mobileNavDrawer[open]::backdrop {
+    opacity: 0;
+  }
+}
+
+.mobileNavHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.0625rem solid #8274e066;
+}
+
+.mobileNavHeading > span {
+  font-size: 0.875rem;
+  letter-spacing: 0.12em;
+  color: var(--primaryBtnBorder);
+}
+
+.mobileNavToggle,
+.mobileNavClose {
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0.0625rem solid #ca7afb66;
+  border-radius: 0.75rem;
+  background: #090a1399;
+  color: #f5f3ff;
+  cursor: pointer;
+  transition: background-color 200ms, border-color 200ms;
+}
+
+.mobileNavClose {
+  display: grid;
+  flex-shrink: 0;
+}
+
+.mobileNavToggle svg,
+.mobileNavClose svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.mobileNavToggle:hover,
+.mobileNavClose:hover {
+  background-color: #ae5efa26;
+  border-color: var(--primaryBtnHighlight);
+}
+
+.mobileNavToggle:focus-visible,
+.mobileNavClose:focus-visible,
+.mobileNavDrawer .siteNav a:focus-visible {
+  outline: 0.125rem solid var(--primaryBtnHighlight);
+  outline-offset: 0.25rem;
+}
+
+.mobileNavDrawer .siteNav {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.mobileNavDrawer .siteNav > div {
+  font-size: 1.25rem;
+}
+
+.mobileNavDrawer .siteNav a {
+  display: flex;
+  width: 100%;
+  min-height: 3.5rem;
+  padding-inline: 1rem;
+  border-radius: 0.75rem;
+}
+
+.mobileNavDrawer .siteNav a:hover {
+  background: #ae5efa1a;
+  color: var(--primaryBtnHighlight);
+}
+
+@media (width <= 64rem) {
+  .siteHeader {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.5rem 1rem;
+  }
+
+  .desktopNav {
+    display: none;
+  }
+
+  .siteHeader .siteLogo {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+    width: min(15rem, 100%);
+    height: 4rem;
+    object-position: left center;
+  }
+
+  .mobileNavToggle {
+    display: grid;
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .accountArea {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .headerSearch {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobileNavDrawer,
+  .mobileNavDrawer::backdrop {
+    transition: none;
   }
 }
