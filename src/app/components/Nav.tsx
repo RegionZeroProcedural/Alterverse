@@ -3,7 +3,7 @@ import Link from "next/link"
 export default function Nav() {
     return (
         <>
-        <nav aria-label="Main navigation" className="siteNav h-5 gap-16 pt-6 flex flex-row">
+        <nav aria-label="Main navigation" className="siteNav">
             <NavElement name = 'Discover' route = '/discover'/>
             <NavElement name = 'Auctions' route = '/auctions'/>
             <NavElement name = 'Exchange' route = '/exchange'/>

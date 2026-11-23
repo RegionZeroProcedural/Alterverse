@@ -54,22 +54,19 @@ export default function CharacterCarousel() {
 
     const [selectedCharacter, setSelectedCharacter] = useState("0");
     
-    const [animatedWidth = 0, animatedHeight = 0] = useAnimationController({
+    const [entranceProgress = 0] = useAnimationController({
             type: "easeOut",
             duration: 800,
             reverse: false,
-            endCoords: [
-              22,
-              0,
-            ],
+            endCoords: [1],
           });
     
 
 
     return (
         <>
-            <div style={{transform: `translateX(${22-animatedWidth}rem)`}} className="embla flex flex-col">
-            <button type="button" aria-label="Previous characters" onClick={() => emblaApi?.scrollPrev()} className="cursor-pointer text-purple-300/70 hover:text-purple-300 translate-x-[0.65rem] hover:translate-y-[-0.2rem] transition-all duration-300">▲</button>
+            <div style={{opacity: entranceProgress, transform: `translateX(${(1-entranceProgress)*16}px)`}} className="embla flex flex-col motion-reduce:!opacity-100 motion-reduce:!transform-none">
+            <button type="button" aria-label="Previous characters" onClick={() => emblaApi?.scrollPrev()} className="cursor-pointer text-purple-300/70 hover:text-purple-300 hover:translate-y-[-0.2rem] transition-all duration-300">▲</button>
             <div className="embla__viewport p-5" ref={emblaRef}>
     <div className="embla__container z-10 pl-5">
         {characters.map((character) => (
@@ -118,7 +115,7 @@ export default function CharacterCarousel() {
                     ))}
                 </div>
             </div>
-            <button type="button" aria-label="Next characters" onClick={() => emblaApi?.scrollNext()} className="cursor-pointer text-purple-300/70 hover:text-purple-300 translate-x-[0.65rem] hover:translate-y-[0.2rem] transition-all duration-300">▼</button>
+            <button type="button" aria-label="Next characters" onClick={() => emblaApi?.scrollNext()} className="cursor-pointer text-purple-300/70 hover:text-purple-300 hover:translate-y-[0.2rem] transition-all duration-300">▼</button>
             </div>
         </>
     )

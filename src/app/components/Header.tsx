@@ -12,7 +12,7 @@ interface headerProps {
 export default function Header({setAuthModalActive, authModalActive}: headerProps) {
     return(
         <>
-            <header className="siteHeader flex flex-row absolute z-50 w-full h-[var(--headerHeight)] bg-linear-to-t from-[var(--headerShadow)]/1 to-[var(--headerShadow)]/100">
+            <header className="siteHeader">
                 <Logo />
                 <Nav />
                 <Search />

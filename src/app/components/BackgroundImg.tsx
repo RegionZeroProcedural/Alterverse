@@ -4,7 +4,7 @@ import neonMoon from '../../../public/NeonMoon.png'
 export default function BackgroundImage() {
     return(
         <>
-            <section className='hero z-0 relative'>
+            <section className='hero z-0'>
                 <Image
                     src={neonMoon}
                     alt=""

@@ -10,7 +10,7 @@ interface accountAreaProps {
 export default function AccountArea({setAuthModalActive, authModalActive}: accountAreaProps) {
     return(
         <>
-            <div className="accountArea flex flex-row gap-5 pt-4 ml-8">
+            <div className="accountArea">
                 <SignInButton setAuthModalActive = {setAuthModalActive} authModalActive = {authModalActive} mode="open"/>
                 <SignUpButton setAuthModalActive = {setAuthModalActive} authModalActive = {authModalActive} mode="open"/>
             </div>

@@ -12,34 +12,25 @@ interface authProps {
 
 export default function AuthModal({authModalActive, setAuthModalActive}: authProps) {
 
-    const [animatedOpacity = 0, animatedHeight = 0] = useAnimationController({
+    const [animatedOpacity = 0] = useAnimationController({
         type: "ease",
         duration: 500,
         reverse: !authModalActive,
-        endCoords: [
-            1,
-            -5,
-        ],
+        endCoords: [1],
     });
     
     return(
         <>  
-                <div style={{
-                    opacity: animatedOpacity,
-                    pointerEvents: authModalActive ? "auto" : "none",
-                    transform: `translateY(${animatedHeight}rem)`,
-                }} className="authBackdrop fixed w-80 h-130 rounded-xl backdrop-blur-[3px] inset-0 z-100 grid translate-x-[55rem] translate-y-[11rem] absolute"/>
             <div
             style={{
                 opacity: animatedOpacity*0.75,
                 pointerEvents: authModalActive ? "auto" : "none",
-                transform: `translateY(${animatedHeight}rem)`,
             }}
             aria-hidden={!authModalActive}
             inert={!authModalActive}
-            className="authLayer fixed inset-0 z-100 grid place-items-center translate-y-[-5rem]"
+            className="authLayer"
             >
-                <div className="authPanel contents">
+                <div role="dialog" aria-modal="true" aria-label="Welcome to Alterverse" className="authPanel">
                 <button
                 type="button"
                 aria-label="Close authentication modal"
@@ -51,8 +42,6 @@ export default function AuthModal({authModalActive, setAuthModalActive}: authPro
                     h-8
                     grid
                     place-items-center
-                    translate-y-[-14.5rem]
-                    translate-x-[7.5rem]
                     cursor-pointer
                     text-gray-200
                     hover:text-white
