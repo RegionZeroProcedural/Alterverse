@@ -399,7 +399,7 @@ body {
 }
 
 .authLayer {
-  position: fixed;
+  position: relative;
   inset: 0;
   z-index: 100;
   display: grid;

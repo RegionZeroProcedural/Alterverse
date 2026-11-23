@@ -23,7 +23,7 @@ export default function AuthModal({authModalActive, setAuthModalActive}: authPro
         <>  <div className="grid absolute place-items-center h-screen w-screen overflow-visible select-none">
             <div style={{
                 opacity: animatedOpacity,
-            }} className="absolute z-10 w-80 h-130 backdrop-blur-sm rounded-lg overflow-visible border-1 border-t-[#ffffff22] border-l-[#ffffff22] border-r-[#ffffff44] border-b-[#ffffff44]" />
+            }} className="absolute z-10 w-88 h-136 backdrop-blur-sm rounded-lg overflow-visible border-1 border-t-[#ffffff22] border-l-[#ffffff22] border-r-[#ffffff44] border-b-[#ffffff44]" />
             <div
             style={{
                 opacity: animatedOpacity*0.75,
