@@ -3,13 +3,13 @@ import Link from "next/link"
 export default function Nav() {
     return (
         <>
-        <div className="h-5 gap-16 pt-6 flex flex-row">
+        <nav aria-label="Main navigation" className="siteNav h-5 gap-16 pt-6 flex flex-row">
             <NavElement name = 'Discover' route = '/discover'/>
             <NavElement name = 'Auctions' route = '/auctions'/>
             <NavElement name = 'Exchange' route = '/exchange'/>
             <NavElement name = 'Studio' route = '/studio'/>
             <NavElement name = 'Creators' route = '/creators' />
-        </div>
+        </nav>
         </>
     )
 }

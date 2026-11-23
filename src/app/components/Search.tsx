@@ -67,7 +67,7 @@ export default function Search() {
   }, []);
 
   return (
-    <div className="relative z-50 ml-80 mt-5 h-[50px] w-[40px] shrink-0">
+    <div className="headerSearch relative z-50 ml-80 mt-5 h-[50px] w-[40px] shrink-0">
       {/* Stationary hover region: not used to decide inside/outside clicks. */}
       <div
         onPointerLeave={() => { console.log("[search trigger] hover-area LEAVE"); setHovered(false); }}

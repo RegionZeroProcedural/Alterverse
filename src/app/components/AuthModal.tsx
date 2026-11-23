@@ -28,16 +28,18 @@ export default function AuthModal({authModalActive, setAuthModalActive}: authPro
                     opacity: animatedOpacity,
                     pointerEvents: authModalActive ? "auto" : "none",
                     transform: `translateY(${animatedHeight}rem)`,
-                }} className="fixed w-80 h-130 rounded-xl backdrop-blur-[3px] inset-0 z-100 grid translate-x-[55rem] translate-y-[11rem] absolute"/>
+                }} className="authBackdrop fixed w-80 h-130 rounded-xl backdrop-blur-[3px] inset-0 z-100 grid translate-x-[55rem] translate-y-[11rem] absolute"/>
             <div
             style={{
                 opacity: animatedOpacity*0.75,
                 pointerEvents: authModalActive ? "auto" : "none",
                 transform: `translateY(${animatedHeight}rem)`,
             }}
-            className="fixed inset-0 z-100 grid place-items-center translate-y-[-5rem]"
+            aria-hidden={!authModalActive}
+            inert={!authModalActive}
+            className="authLayer fixed inset-0 z-100 grid place-items-center translate-y-[-5rem]"
             >
-                
+                <div className="authPanel contents">
                 <button
                 type="button"
                 aria-label="Close authentication modal"
@@ -75,7 +77,7 @@ export default function AuthModal({authModalActive, setAuthModalActive}: authPro
                 <div className="absolute z-102 w-40 h-65 bg-[#000000] opacity-40 blur-lg rounded-2xl">
                 
                 </div>
-                <div className="z-200 gap-7 flex flex-col absolute w-70 h-120">
+                <div className="authContent z-200 gap-7 flex flex-col absolute w-70 h-120">
                     <HiCubeTransparent className="text-[var(--accent2)] self-center w-40 h-40 mt-7"/>
                     <div className="text-[var(--primaryBtnBorder)] blur-[0.6px] text-[1.4rem] scale-y-125 w-80 font-bold">WELCOME TO ALTERVERSE</div>
                     <input className="bg-[#090a13]/40
@@ -100,6 +102,7 @@ export default function AuthModal({authModalActive, setAuthModalActive}: authPro
                         <SignInButton authModalActive = {authModalActive} setAuthModalActive={setAuthModalActive} mode="submit"/>
                         <SignUpButton authModalActive = {authModalActive} setAuthModalActive={setAuthModalActive} mode="submit"/>
                     </div>
+                </div>
                 </div>
             </div>
         </>
